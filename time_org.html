@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 효율적으로 사용하기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Noto Sans KR 폰트 불러오기 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 폰트를 Noto Sans KR로 변경 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Tailwind's slate-50 */
+        }
+        /* Noto Sans KR 폰트에 맞게 제목 크기 재조정 */
+        h1 {
+            font-size: 2.5rem; /* 제목 폰트 크기 조정 */
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5rem; /* 카드 제목 폰트 크기 조정 */
+        }
+        /* 카드 호버 시 살짝 떠오르는 효과 */
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- 페이지 제목 -->
+        <header class="text-center mb-12">
+            <h1 class="font-bold text-slate-800 mb-3">시간 효율적으로 사용하기</h1>
+            <p class="text-lg text-slate-600">여러분의 하루를 더 알차게 만드는 특별한 기술!</p>
+        </header>
+
+        <!-- 시간 관리 기술 카드 섹션 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. 할 일 목록 만들기 -->
+            <div class="card bg-white rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-sky-600 mb-4">1. 오늘의 임무 지도: 할 일 목록</h2>
+                <div class="mb-4">
+                    <strong class="text-pink-500 text-lg">이런 상황이라면?</strong>
+                    <p class="text-slate-600 mt-1">"오늘 뭐 해야 하더라? 아, 숙제 있었는데 깜빡했다!"</p>
+                </div>
+                <div class="mb-4">
+                    <strong class="text-green-500 text-lg">해결책은?</strong>
+                    <p class="text-slate-600 mt-1">자기 전이나 아침에 오늘 할 일을 게임 퀘스트처럼 쭉 적어보세요.</p>
+                    <ul class="list-disc list-inside bg-sky-50 text-sky-800 p-3 rounded-lg mt-2 text-sm">
+                        <li>수학 문제집 10쪽 풀기</li>
+                        <li>사회 발표 자료 찾기</li>
+                        <li>방 정리하기</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="text-purple-500 text-lg">왜 좋을까?</strong>
+                    <p class="text-slate-600 mt-1">해야 할 일을 잊지 않고, 하나씩 지울 때마다 엄청난 뿌듯함을 느낄 수 있어요!</p>
+                </div>
+            </div>
+
+            <!-- 2. 우선순위 정하기 -->
+            <div class="card bg-white rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-sky-600 mb-4">2. 중요도에 따라 별점 주기: 우선순위</h2>
+                <div class="mb-4">
+                    <strong class="text-pink-500 text-lg">이런 상황이라면?</strong>
+                    <p class="text-slate-600 mt-1">"내일이 시험인데, 친구랑 게임 약속이 잡혔네. 뭘 먼저 하지?"</p>
+                </div>
+                <div class="mb-4">
+                    <strong class="text-green-500 text-lg">해결책은?</strong>
+                    <p class="text-slate-600 mt-1">가장 중요하고 급한 일에 별점을 매겨 순서를 정해보는 거예요.</p>
+                     <ul class="list-none bg-sky-50 text-sky-800 p-3 rounded-lg mt-2 space-y-1 text-sm">
+                        <li><span class="font-bold">★★★</span> 내일 볼 시험공부 (가장 먼저!)</li>
+                        <li><span class="font-bold">★★☆</span> 다음 주까지인 숙제 (시간 날 때 미리!)</li>
+                        <li><span class="font-bold">★☆☆</span> 서랍 정리 (시간 남으면!)</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="text-purple-500 text-lg">왜 좋을까?</strong>
+                    <p class="text-slate-600 mt-1">중요한 일을 먼저 끝내서 마음 편하게 놀 수 있어요.</p>
+                </div>
+            </div>
+
+            <!-- 3. 업무 나누기 -->
+            <div class="card bg-white rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-sky-600 mb-4">3. 큰 케이크는 조각내서! 업무 나누기</h2>
+                <div class="mb-4">
+                    <strong class="text-pink-500 text-lg">이런 상황이라면?</strong>
+                    <p class="text-slate-600 mt-1">"우와, 과학 보고서를 언제 다 쓰지? 막막하다..."</p>
+                </div>
+                <div class="mb-4">
+                    <strong class="text-green-500 text-lg">해결책은?</strong>
+                    <p class="text-slate-600 mt-1">어렵고 큰일을 작은 조각으로 나누어 하나씩 해치우는 거예요.</p>
+                    <p class="text-sky-800 mt-2 bg-sky-50 p-3 rounded-lg text-sm">
+                        <span class="font-semibold">자료 조사</span> → <span class="font-semibold">내용 정하기</span> → <span class="font-semibold">글쓰기</span> → <span class="font-semibold">마무리</span>
+                    </p>
+                </div>
+                <div>
+                    <strong class="text-purple-500 text-lg">왜 좋을까?</strong>
+                    <p class="text-slate-600 mt-1">막막했던 일이 작고 쉬운 일 여러 개로 바뀌어서 부담 없이 시작할 수 있어요.</p>
+                </div>
+            </div>
+
+            <!-- 4. 뽀모도로 기법 -->
+            <div class="card bg-white rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-sky-600 mb-4">4. 집중력 폭발! 뽀모도로 기법</h2>
+                <div class="mb-4">
+                    <strong class="text-pink-500 text-lg">이런 상황이라면?</strong>
+                    <p class="text-slate-600 mt-1">"숙제하려고 앉았는데, 자꾸 스마트폰에 손이 가고 집중이 안 돼."</p>
+                </div>
+                <div class="mb-4">
+                    <strong class="text-green-500 text-lg">해결책은?</strong>
+                    <p class="text-slate-600 mt-1">특별한 시간 관리법을 써보세요.</p>
+                     <ol class="list-decimal list-inside bg-sky-50 text-sky-800 p-3 rounded-lg mt-2 space-y-1 text-sm">
+                        <li><span class="font-bold">25분</span> 동안 딱 한 가지 일에 완전 집중!</li>
+                        <li><span class="font-bold">5분</span> 동안 일어나서 스트레칭하며 휴식!</li>
+                        <li>이걸 반복하고, 4번 하면 길게 쉬어요.</li>
+                    </ol>
+                </div>
+                <div>
+                    <strong class="text-purple-500 text-lg">왜 좋을까?</strong>
+                    <p class="text-slate-600 mt-1">'25분만 참자!'라는 생각에 집중력이 확 올라가고, 뇌가 지치지 않아요.</p>
+                </div>
+            </div>
+
+            <!-- 5. 생활 습관 만들기 -->
+            <div class="card bg-white rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-sky-600 mb-4">5. 나만의 규칙적인 하루: 생활 습관</h2>
+                <div class="mb-4">
+                    <strong class="text-pink-500 text-lg">이런 상황이라면?</strong>
+                    <p class="text-slate-600 mt-1">"매일 학원 다녀오면 피곤해서 아무것도 하기 싫어."</p>
+                </div>
+                <div class="mb-4">
+                    <strong class="text-green-500 text-lg">해결책은?</strong>
+                    <p class="text-slate-600 mt-1">매일 비슷한 시간에 비슷한 활동을 해서 몸이 기억하게 만드세요.</p>
+                     <ul class="list-disc list-inside bg-sky-50 text-sky-800 p-3 rounded-lg mt-2 text-sm">
+                        <li><span class="font-bold">4:00~4:30:</span> 간식 먹으며 휴식</li>
+                        <li><span class="font-bold">4:30~6:00:</span> 숙제 및 공부 시간</li>
+                        <li><span class="font-bold">6:00 이후:</span> 신나는 자유 시간!</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="text-purple-500 text-lg">왜 좋을까?</strong>
+                    <p class="text-slate-600 mt-1">'뭘 할까?' 고민하는 시간을 줄이고, 꾸준한 습관으로 일을 미루지 않게 돼요.</p>
+                </div>
+            </div>
+            
+            <!-- 6. 추가 꿀팁 -->
+            <div class="card bg-slate-100 rounded-xl shadow-sm p-6">
+                <h2 class="font-bold text-slate-700 mb-4">추가 꿀팁!</h2>
+                <ul class="space-y-4">
+                    <li>
+                        <strong class="text-slate-600 text-lg">방해 금지 구역 설정</strong>
+                        <p class="text-slate-500 text-sm">공부할 땐 스마트폰, TV는 잠시 다른 곳에 두세요.</p>
+                    </li>
+                    <li>
+                        <strong class="text-slate-600 text-lg">충분한 잠은 필수</strong>
+                        <p class="text-slate-500 text-sm">꿀잠을 자야 다음 날 뇌가 쌩쌩하게 활동할 수 있어요!</p>
+                    </li>
+                     <li>
+                        <strong class="text-slate-600 text-lg">계획은 유연하게</strong>
+                        <p class="text-slate-500 text-sm">가끔 계획대로 안 되더라도 괜찮아요. 다시 시작하면 되니까요!</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- 마무리 메시지 -->
+        <footer class="text-center mt-12">
+            <p class="text-xl font-bold text-slate-700">여러분도 시간의 주인이 될 수 있어요!</p>
+            <p class="text-base text-slate-600 mt-2 leading-relaxed">시간 관리 방법 중 한 가지를 선택해서 한 주간 실천해 보고, <br class="sm:hidden">실천한 내용이나 소감 등을 적어봅시다.</p>
+        </footer>
+    </div>
+</body>
+</html>
