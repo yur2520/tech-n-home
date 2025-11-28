@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조리 실습 보고서</title>
+    <style>
+        @font-face {
+            font-family: 'SUITE Variable';
+            font-weight: 300 900;           
+            src: url('./SUITE-Variable.woff2') format('woff2-variations');
+        }
+        /* A4 출력에 최적화된 기본 스타일 */
+        body {
+            font-family: 'SUITE Variable', 'Malgun Gothic', 'Dotum', sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 2cm; /* A4 여백 */
+            box-sizing: border-box;
+            width: 21cm; /* A4 너비 */
+            min-height: 29.7cm; /* A4 높이 */
+            word-break: keep-all; /* 단어 단위 줄 바꿈 */
+        }
+        .report-container {
+            max-width: 17cm; /* A4 너비에서 여백을 뺀 실질 너비 */
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            border-bottom: 3px double #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            border-left: 5px solid #ffcc00;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* 상단 정보 입력란 스타일 */
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        /* 첫 번째 줄: 요리 이름과 날짜 */
+        .row.first {
+            justify-content: space-between;
+        }
+        /* 두 번째 줄: 인적 사항 (우측 정렬) */
+        .row.second {
+            justify-content: flex-end; /* 오른쪽 정렬 적용 */
+        }
+        
+        /* 입력란 선 스타일: 연한 회색 실선 */
+        .input-underline {
+            border-bottom: 1px solid #ccc; 
+            text-align: center;
+            display: inline-block;
+            height: 1.5em;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+        
+        .question-box {
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        /* 안내 문구 스타일 */
+        .instruction-text {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 줄 스타일: 연한 회색 실선 */
+        .line {
+            display: block;
+            width: 100%;
+            height: 1.6em; /* 줄 간격 */
+            border-bottom: 1px solid #ccc; 
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f7f7f7;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* 첫 번째 열(항목) 스타일 */
+        td:first-child {
+            width: 15%;
+            text-align: center;
+            background-color: #fcfcfc;
+            font-weight: bold;
+        }
+        
+        /* 표 내부 줄 스타일: 연한 회색 실선 */
+        .table-line {
+            display: block;
+            width: 100%;
+            height: 1.2em;
+            border-bottom: 1px solid #ccc; 
+        }
+        
+        .example-words {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+        
+        /* 출력 시 설정 */
+        @media print {
+            body {
+                padding: 1cm;
+                margin: 0;
+                box-shadow: none;
+            }
+            .report-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+
+    <h1>🍳 조리 실습 보고서</h1>
+
+    <div class="header-info">
+        <div class="row first">
+            <div style="flex-grow: 1; display: flex; align-items: center;">
+                <b>요리 이름</b> 
+                <span class="input-underline" style="flex-grow: 1; margin-right: 20px;"></span>
+            </div>
+            <div style="white-space: nowrap;">
+                <b>실습한 날:</b> <span class="input-underline" style="width: 120px; margin-right: 0;"></span>
+            </div>
+        </div>
+        
+        <div class="row second">
+            <span class="input-underline" style="width: 40px;"></span><b>학년</b>
+            <span class="input-underline" style="width: 40px;"></span><b>반</b>
+            <span class="input-underline" style="width: 40px;"></span><b>번</b> &nbsp;&nbsp;&nbsp;
+            <b>이름:</b> <span class="input-underline" style="width: 120px; margin-right: 0;"></span>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>1. 조리 실습에서 내가 한 역할을 적어봅시다.</h2>
+    <div class="question-box">
+        <span class="instruction-text">(예: 재료 다듬기, 양념 계량하기, 볶는 과정 담당, 설거지 담당 등 구체적으로 작성해 주세요.)</span>
+        
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        
+    </div>
+
+    <h2>2. 내가 만든 음식의 맛, 식감, 냄새 등을 묘사하여 봅시다.</h2>
+    <div class="question-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>항목</th>
+                    <th>묘사 (어떤 맛/식감/냄새였나요?)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>맛</td>
+                    <td><span class="table-line"></span>
+                        <div class="example-words"> (예시: 달콤한, 짭조름한, 새콤한, 매콤한, 쌉싸름한, 깊은, 깔끔한, 담백한)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>식감</td>
+                    <td><span class="table-line"></span>
+                        <div class="example-words"> (예시: 바삭한, 쫄깃한, 부드러운, 아삭한, 쫀득한, 촉촉한, 거친, 사각거리는)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>냄새</td>
+                    <td><span class="table-line"></span>
+                        <div class="example-words"> (예시: 고소한, 향긋한, 달콤한, 싱그러운, 구수한, 톡 쏘는, 은은한, 진한)</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>3. 조리 실습 후 느낀 점이나 생각 등을 적어봅시다.</h2>
+    <div class="question-box">
+        <span class="instruction-text">(어려웠던 점, 좋았던 점, 다음 실습 때 개선할 점 등을 포함하여 작성해 주세요.)</span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        
+    </div>
+
+</div>
+
+</body>
+</html>
